@@ -105,8 +105,21 @@
                         //点击收藏
                         $('body').on('click','button.collect',function(event){
                             event.stopPropagation();
-                            sel.title = $(this).parent().find('span').eq(1).text()
+                            sel.title = $(this).parent().find('span').eq(2).text()
                             console.log(sel.title)
+                            var myGeo = new BMap.Geocoder();
+                            myGeo.getPoint(sel.title, function(point){
+                            console.log(point)
+                                if (point) {
+                                    var item = {}
+                                    item.point = point;
+                                    item.title = sel.title;
+                                    item.address = sel.title;
+                                    sel.place.push(item);
+                                }else{
+                                    alert("您选择地址没有解析到结果!");
+                                }
+                            }, "厦门市");
                         })
                         sel.CreatedEvent = true;
                     }

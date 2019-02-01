@@ -15,13 +15,13 @@ export default {
         var searchComplete = function (results){
             // console.log(results)
             var k = arr.findIndex(function(item){
-                if(item.point.lat == results.Qv.point.lat && item.point.lng == results.Qv.point.lng){
+                if(item.point.lat == results.Rv.point.lat && item.point.lng == results.Rv.point.lng){
                     return item
                 }
 
             })
             var m = arr.findIndex(function(item){
-                if(item.point.lat == results.bv.point.lat && item.point.lng == results.bv.point.lng){
+                if(item.point.lat == results.cv.point.lat && item.point.lng == results.cv.point.lng){
                     return item
                 }      
             })
